@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>변리사 김세원 | Patent Attorney Sewon Kim</title>
+<meta name="description" content="변리사 김세원 — 전기·전자·통신, 소프트웨어·AI 분야 특허 출원, 심판, 상표·디자인">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --navy:#14213d; --navy-2:#1f3160; --ink:#1c2230; --muted:#5b6474;
+  --line:#e3e6ec; --bg:#ffffff; --bg-soft:#f6f7f9; --accent:#b08d57;
+  --sans:"Noto Sans KR","Noto Sans JP",system-ui,sans-serif;
+  --serif:"Noto Serif KR","Noto Serif JP",Georgia,serif;
+}
+html[lang="ja"]{--sans:"Noto Sans JP","Noto Sans KR",system-ui,sans-serif;--serif:"Noto Serif JP","Noto Serif KR",Georgia,serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* header */
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--navy);letter-spacing:.02em;white-space:nowrap}
+.logo small{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--muted);margin-left:8px;letter-spacing:.08em}
+nav ul{display:flex;gap:28px;list-style:none;font-size:14.5px;color:var(--muted)}
+nav a:hover{color:var(--navy)}
+.lang{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;flex-shrink:0}
+.lang button{border:0;background:none;padding:6px 10px;font:500 12.5px var(--sans);color:var(--muted);cursor:pointer}
+.lang button.on{background:var(--navy);color:#fff}
+
+/* hero */
+.hero{background:var(--navy);color:#fff;padding:120px 0 110px;position:relative;overflow:hidden}
+.hero::after{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;border:1px solid rgba(255,255,255,.08);border-radius:50%}
+.hero::before{content:"";position:absolute;right:-40px;top:-40px;width:300px;height:300px;border:1px solid rgba(176,141,87,.25);border-radius:50%}
+.eyebrow{font-size:13px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:20px}
+.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(32px,5vw,52px);line-height:1.3;margin-bottom:24px;max-width:760px}
+.hero p{font-size:17px;color:rgba(255,255,255,.78);max-width:620px}
+.cta{display:inline-block;margin-top:40px;padding:14px 28px;border:1px solid var(--accent);color:#fff;font-size:15px;letter-spacing:.04em;transition:.2s}
+.cta:hover{background:var(--accent)}
+
+/* sections */
+section{padding:100px 0}
+section.soft{background:var(--bg-soft)}
+.sec-head{margin-bottom:48px}
+.sec-head .eyebrow{color:var(--accent)}
+.sec-head h2{font-family:var(--serif);font-size:clamp(26px,3.4vw,34px);color:var(--navy);line-height:1.35}
+
+/* about */
+.about{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:start}
+.photo{aspect-ratio:3/4;background:linear-gradient(160deg,#dfe3ea,#c7cdd8);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;text-align:center;padding:20px}
+.about-text p{margin-bottom:18px;color:#333b4a}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px;padding-top:32px;border-top:1px solid var(--line)}
+.facts h4{font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:10px;font-weight:500}
+.facts ul{list-style:none;font-size:14.5px;color:#333b4a}
+.facts li{padding:3px 0}
+
+/* practice */
+.grid4{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.card{background:#fff;padding:40px 36px}
+.card .num{font-family:var(--serif);color:var(--accent);font-size:14px;margin-bottom:14px}
+.card h3{font-family:var(--serif);font-size:21px;color:var(--navy);margin-bottom:12px}
+.card p{font-size:15px;color:var(--muted)}
+
+/* tech */
+.tech{display:grid;grid-template-columns:1fr 1fr;gap:32px}
+.tech-item{border-left:2px solid var(--navy);padding:6px 0 6px 28px}
+.tech-item h3{font-family:var(--serif);font-size:20px;color:var(--navy);margin-bottom:10px}
+.tech-item p{font-size:15px;color:var(--muted);margin-bottom:14px}
+.tags{display:flex;flex-wrap:wrap;gap:8px}
+.tags span{font-size:12.5px;padding:4px 12px;border:1px solid var(--line);background:#fff;color:#3a4252}
+
+/* insights */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post{background:#fff;border:1px solid var(--line);padding:30px 28px;display:flex;flex-direction:column;transition:.2s}
+.post:hover{border-color:var(--navy)}
+.post .cat{font-size:12px;letter-spacing:.1em;color:var(--accent);margin-bottom:12px}
+.post h3{font-family:var(--serif);font-size:17.5px;color:var(--navy);line-height:1.5;margin-bottom:12px;flex:1}
+.post .date{font-size:13px;color:var(--muted)}
+
+/* contact */
+.contact{background:var(--navy);color:#fff}
+.contact .sec-head h2{color:#fff}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+.contact p.lead{color:rgba(255,255,255,.78);font-size:16px}
+.info{list-style:none;border-top:1px solid rgba(255,255,255,.15)}
+.info li{display:flex;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:15px}
+.info b{width:90px;flex-shrink:0;font-weight:500;color:var(--accent);font-size:13px;letter-spacing:.08em;padding-top:2px}
+
+footer{background:#0e1830;color:rgba(255,255,255,.5);font-size:12.5px;padding:32px 0}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+@media (max-width:860px){
+  nav{display:none}
+  .about,.contact-grid,.tech{grid-template-columns:1fr;gap:36px}
+  .photo{max-width:240px}
+  .grid4,.posts{grid-template-columns:1fr}
+  section{padding:72px 0}
+  .hero{padding:88px 0 80px}
+}
+@media (max-width:480px){
+  .wrap{padding:0 16px}
+  .logo small{display:none}
+  .facts{grid-template-columns:1fr}
+  .card{padding:32px 24px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap bar">
+    <a href="#top" class="logo"><span data-i18n="logo">변리사 김세원</span><small>PATENT ATTORNEY</small></a>
+    <nav><ul>
+      <li><a href="#about" data-i18n="nav.about">소개</a></li>
+      <li><a href="#practice" data-i18n="nav.practice">업무분야</a></li>
+      <li><a href="#tech" data-i18n="nav.tech">기술분야</a></li>
+      <li><a href="#insights" data-i18n="nav.insights">칼럼</a></li>
+      <li><a href="#contact" data-i18n="nav.contact">연락처</a></li>
+    </ul></nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="ko">KO</button><button data-lang="en">EN</button><button data-lang="ja">JA</button>
+    </div>
+  </div>
+</header>
+
+<div class="hero" id="top">
+  <div class="wrap">
+    <div class="eyebrow" data-i18n="hero.eyebrow">Korean Patent Attorney</div>
+    <h1 data-i18n="hero.title">기술을 정확히 이해하고,<br>권리로 단단하게 남깁니다.</h1>
+    <p data-i18n="hero.desc">전기·전자·통신 및 소프트웨어·AI 분야의 발명을 중심으로 출원부터 심판까지 함께합니다.</p>
+    <a href="#contact" class="cta" data-i18n="hero.cta">상담 문의</a>
+  </div>
+</div>
+
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">About</div><h2 data-i18n="about.title">소개</h2></div>
+    <div class="about">
+      <div class="photo" data-i18n="about.photo">프로필 사진<br>(3:4 비율 권장)</div>
+      <div class="about-text">
+        <p data-i18n="about.p1">안녕하세요, 변리사 김세원입니다. 전기·전자 공학 배경을 바탕으로 반도체, 통신, 소프트웨어 및 인공지능 분야의 특허 업무를 수행하고 있습니다.</p>
+        <p data-i18n="about.p2">발명자의 아이디어를 기술적으로 정확히 이해하는 것에서 출발해, 심사와 분쟁 단계까지 견딜 수 있는 권리범위를 설계하는 것을 중요하게 생각합니다. 국내외 출원인의 사건을 한국어·영어·일본어로 소통하며 진행합니다.</p>
+        <div class="facts">
+          <div>
+            <h4 data-i18n="about.edu">학력</h4>
+            <ul>
+              <li data-i18n="about.edu1">[대학교] [학과] 학사</li>
+              <li data-i18n="about.edu2">[대학원] [전공] 석사 (해당 시)</li>
+            </ul>
+          </div>
+          <div>
+            <h4 data-i18n="about.career">경력·자격</h4>
+            <ul>
+              <li data-i18n="about.c1">변리사 (제 [ ]회 변리사시험)</li>
+              <li data-i18n="about.c2">[현 소속] / [이전 경력]</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="practice" class="soft">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Practice Areas</div><h2 data-i18n="practice.title">업무분야</h2></div>
+    <div class="grid4">
+      <div class="card"><div class="num">01</div><h3 data-i18n="p1.t">국내 특허 출원 · 심사 대응</h3><p data-i18n="p1.d">발명 상담과 선행기술 검토를 거쳐 명세서를 작성하고, 의견제출통지에 대해 의견서·보정서로 대응합니다.</p></div>
+      <div class="card"><div class="num">02</div><h3 data-i18n="p2.t">해외 출원 (In-bound / Out-bound)</h3><p data-i18n="p2.d">해외 출원인의 한국 출원과 심사 대응을 대리하고, 국내 기업의 PCT·해외 출원을 현지 대리인과 협업해 진행합니다.</p></div>
+      <div class="card"><div class="num">03</div><h3 data-i18n="p3.t">심판 · 소송</h3><p data-i18n="p3.d">거절결정불복심판, 무효심판, 권리범위확인심판 등 특허심판원 사건과 관련 분쟁을 수행합니다.</p></div>
+      <div class="card"><div class="num">04</div><h3 data-i18n="p4.t">상표 · 디자인</h3><p data-i18n="p4.d">브랜드와 제품 디자인의 출원·등록, 이의신청 및 분쟁 대응을 지원합니다.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tech">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Technology</div><h2 data-i18n="tech.title">기술분야</h2></div>
+    <div class="tech">
+      <div class="tech-item">
+        <h3 data-i18n="t1.t">전기 · 전자 · 통신</h3>
+        <p data-i18n="t1.d">반도체 소자와 공정, 회로, 디스플레이, 이동통신 및 네트워크 기술</p>
+        <div class="tags"><span data-i18n="t1.a">반도체</span><span data-i18n="t1.b">디스플레이</span><span data-i18n="t1.c">무선통신</span><span data-i18n="t1.d2">전력전자</span></div>
+      </div>
+      <div class="tech-item">
+        <h3 data-i18n="t2.t">소프트웨어 · AI</h3>
+        <p data-i18n="t2.d">인공지능·머신러닝, 데이터 처리, 영업방법(BM), 컴퓨터 구현 발명</p>
+        <div class="tags"><span data-i18n="t2.a">머신러닝</span><span data-i18n="t2.b">영상처리</span><span data-i18n="t2.c">BM 특허</span><span data-i18n="t2.d2">플랫폼</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="insights" class="soft">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Insights</div><h2 data-i18n="ins.title">칼럼 · 판례 노트</h2></div>
+    <div class="posts">
+      <a class="post" href="#"><div class="cat" data-i18n="ins.c1">판례 노트</div><h3 data-i18n="ins.h1">[예시] AI 관련 발명의 진보성 판단, 최근 판례의 흐름</h3><div class="date">2026.10</div></a>
+      <a class="post" href="#"><div class="cat" data-i18n="ins.c2">실무 가이드</div><h3 data-i18n="ins.h2">[예시] 해외 출원인을 위한 한국 심사 절차 안내</h3><div class="date">2026.09</div></a>
+      <a class="post" href="#"><div class="cat" data-i18n="ins.c3">칼럼</div><h3 data-i18n="ins.h3">[예시] 소프트웨어 발명, 청구항을 어떻게 써야 할까</h3><div class="date">2026.08</div></a>
+    </div>
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="sec-head"><div class="eyebrow">Contact</div><h2 data-i18n="contact.title">연락처</h2></div>
+    <div class="contact-grid">
+      <p class="lead" data-i18n="contact.lead">출원 상담, 해외 사건 의뢰, 심판 관련 문의는 이메일로 편하게 연락 주십시오. 한국어, 영어, 일본어로 상담이 가능합니다.</p>
+      <ul class="info">
+        <li><b>EMAIL</b><a href="mailto:your@email.com">your@email.com</a></li>
+        <li><b>TEL</b><span>+82-2-0000-0000</span></li>
+        <li><b>OFFICE</b><span data-i18n="contact.addr">[사무소명] / [주소]</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Sewon Kim. All rights reserved.</span>
+    <span data-i18n="footer.note">본 홈페이지의 내용은 일반적인 정보 제공을 목적으로 하며 법률 자문이 아닙니다.</span>
+  </div>
+</footer>
+
+<script>
+const I18N = {
+  en: {
+    "logo":"Sewon Kim",
+    "nav.about":"About","nav.practice":"Practice","nav.tech":"Technology","nav.insights":"Insights","nav.contact":"Contact",
+    "hero.eyebrow":"Korean Patent Attorney",
+    "hero.title":"Understanding technology precisely,<br>securing it as solid rights.",
+    "hero.desc":"From filing to trial, I work with inventions in electrical, electronics and telecommunications, as well as software and AI.",
+    "hero.cta":"Get in touch",
+    "about.title":"About","about.photo":"Profile photo<br>(3:4 ratio)",
+    "about.p1":"I am Sewon Kim, a Korean patent attorney. With a background in electrical and electronic engineering, I handle patent matters in semiconductors, telecommunications, software and artificial intelligence.",
+    "about.p2":"My work starts with a precise technical understanding of each invention, and focuses on drafting claim scope that holds up through examination and disputes. I work with domestic and overseas clients in Korean, English and Japanese.",
+    "about.edu":"EDUCATION","about.edu1":"B.S., [Department], [University]","about.edu2":"M.S., [Major], [Graduate School] (if applicable)",
+    "about.career":"CAREER & ADMISSION","about.c1":"Registered Patent Attorney, Korea","about.c2":"[Current firm] / [Previous experience]",
+    "practice.title":"Practice Areas",
+    "p1.t":"Korean Patent Prosecution","p1.d":"Invention consultation, prior art review and specification drafting, and responses to Office Actions through arguments and amendments.",
+    "p2.t":"International Filings (In-bound / Out-bound)","p2.d":"Representing overseas applicants before the KIPO, and coordinating PCT and foreign filings for Korean companies with local counsel.",
+    "p3.t":"Trials & Litigation","p3.d":"Appeals against final rejection, invalidation trials, scope confirmation trials and related disputes before the IPTAB.",
+    "p4.t":"Trademarks & Designs","p4.d":"Filing and registration of brands and product designs, oppositions and dispute support.",
+    "tech.title":"Technology",
+    "t1.t":"Electrical, Electronics & Telecom","t1.d":"Semiconductor devices and processes, circuits, displays, mobile communications and networks",
+    "t1.a":"Semiconductors","t1.b":"Displays","t1.c":"Wireless","t1.d2":"Power Electronics",
+    "t2.t":"Software & AI","t2.d":"AI and machine learning, data processing, business methods and computer-implemented inventions",
+    "t2.a":"Machine Learning","t2.b":"Image Processing","t2.c":"Business Methods","t2.d2":"Platforms",
+    "ins.title":"Insights","ins.c1":"Case Note","ins.c2":"Practice Guide","ins.c3":"Column",
+    "ins.h1":"[Sample] Inventive step for AI-related inventions: recent case law",
+    "ins.h2":"[Sample] A guide to Korean patent examination for overseas applicants",
+    "ins.h3":"[Sample] How to draft claims for software inventions",
+    "contact.title":"Contact",
+    "contact.lead":"For filing consultations, overseas matters or trial inquiries, please feel free to contact me by email. Consultations are available in Korean, English and Japanese.",
+    "contact.addr":"[Firm name] / [Address]",
+    "footer.note":"The content of this website is for general information only and does not constitute legal advice."
+  },
+  ja: {
+    "logo":"弁理士 金世元",
+    "nav.about":"プロフィール","nav.practice":"業務分野","nav.tech":"技術分野","nav.insights":"コラム","nav.contact":"お問い合わせ",
+    "hero.eyebrow":"Korean Patent Attorney",
+    "hero.title":"技術を正確に理解し、<br>確かな権利として残します。",
+    "hero.desc":"電気・電子・通信およびソフトウェア・AI分野の発明を中心に、出願から審判までサポートいたします。",
+    "hero.cta":"お問い合わせ",
+    "about.title":"プロフィール","about.photo":"プロフィール写真<br>（3:4推奨）",
+    "about.p1":"韓国弁理士の金世元です。電気・電子工学のバックグラウンドを活かし、半導体、通信、ソフトウェアおよび人工知能分野の特許業務を担当しております。",
+    "about.p2":"発明者のアイデアを技術的に正確に理解することから始め、審査や紛争の段階にも耐えうる権利範囲の設計を大切にしています。国内外の出願人の案件を、韓国語・英語・日本語で対応いたします。",
+    "about.edu":"学歴","about.edu1":"[大学] [学科] 学士","about.edu2":"[大学院] [専攻] 修士（該当する場合）",
+    "about.career":"経歴・資格","about.c1":"韓国弁理士","about.c2":"[現所属] / [前職]",
+    "practice.title":"業務分野",
+    "p1.t":"韓国特許出願・中間処理","p1.d":"発明相談と先行技術調査を経て明細書を作成し、意見提出通知に対して意見書・補正書で対応いたします。",
+    "p2.t":"外国出願（内外・外内）","p2.d":"海外出願人による韓国出願および審査対応を代理し、韓国企業のPCT・外国出願を現地代理人と協力して進めます。",
+    "p3.t":"審判・訴訟","p3.d":"拒絶決定不服審判、無効審判、権利範囲確認審判など、特許審判院の事件および関連紛争を担当いたします。",
+    "p4.t":"商標・意匠","p4.d":"ブランドおよび製品デザインの出願・登録、異議申立および紛争対応をサポートいたします。",
+    "tech.title":"技術分野",
+    "t1.t":"電気・電子・通信","t1.d":"半導体素子・プロセス、回路、ディスプレイ、移動通信およびネットワーク技術",
+    "t1.a":"半導体","t1.b":"ディスプレイ","t1.c":"無線通信","t1.d2":"パワーエレクトロニクス",
+    "t2.t":"ソフトウェア・AI","t2.d":"人工知能・機械学習、データ処理、ビジネスモデル（BM）、コンピュータ実装発明",
+    "t2.a":"機械学習","t2.b":"画像処理","t2.c":"BM特許","t2.d2":"プラットフォーム",
+    "ins.title":"コラム・判例ノート","ins.c1":"判例ノート","ins.c2":"実務ガイド","ins.c3":"コラム",
+    "ins.h1":"［例］AI関連発明の進歩性判断：最近の判例の動向",
+    "ins.h2":"［例］海外出願人のための韓国審査手続ガイド",
+    "ins.h3":"［例］ソフトウェア発明のクレームはどう書くべきか",
+    "contact.title":"お問い合わせ",
+    "contact.lead":"出願のご相談、外国案件のご依頼、審判に関するお問い合わせは、お気軽にメールでご連絡ください。韓国語・英語・日本語で対応いたします。",
+    "contact.addr":"[事務所名] / [住所]",
+    "footer.note":"本ウェブサイトの内容は一般的な情報提供を目的としたものであり、法的助言ではありません。"
+  }
+};
+// Save Korean originals from the HTML
+const ko = {};
+document.querySelectorAll("[data-i18n]").forEach(el => ko[el.dataset.i18n] = el.innerHTML);
+I18N.ko = ko;
+
+function setLang(lang){
+  if(!I18N[lang]) lang = "ko";
+  document.documentElement.lang = lang;
+  document.querySelectorAll("[data-i18n]").forEach(el => {
+    const v = I18N[lang][el.dataset.i18n];
+    if(v !== undefined) el.innerHTML = v;
+  });
+  document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.lang === lang));
+  document.title = lang === "ko" ? "변리사 김세원 | Patent Attorney Sewon Kim"
+                 : lang === "ja" ? "弁理士 金世元 | Patent Attorney Sewon Kim"
+                 : "Sewon Kim | Korean Patent Attorney";
+  try { localStorage.setItem("lang", lang); } catch(e) {}
+}
+document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+
+let initial = "ko";
+try { initial = localStorage.getItem("lang") || ""; } catch(e) { initial = ""; }
+if(!initial){
+  const nav = (navigator.language || "ko").slice(0,2);
+  initial = ["ko","en","ja"].includes(nav) ? nav : "en";
+}
+setLang(initial);
+</script>
+</body>
+</html>
