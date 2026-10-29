@@ -1,0 +1,88 @@
+# sewonlog 관리자 페이지 설정 (Sveltia CMS)
+backend:
+  name: github
+  repo: swkim-patent/swkim-patent.github.io
+  branch: main
+  commit_messages:
+    create: "새 글: {{slug}}"
+    update: "글 수정: {{slug}}"
+    delete: "글 삭제: {{slug}}"
+    uploadMedia: "사진 업로드: {{path}}"
+    deleteMedia: "사진 삭제: {{path}}"
+
+site_url: https://sewonlog.com
+display_url: https://sewonlog.com
+
+media_folder: images/uploads
+public_folder: /images/uploads
+
+collections:
+  - name: posts
+    label: 글
+    label_singular: 글
+    folder: _posts
+    create: true
+    extension: md
+    format: frontmatter
+    slug: "{{year}}-{{month}}-{{day}}-{{hour}}{{minute}}{{second}}"
+    summary: "{{date}} · {{title}}"
+    sortable_fields: [date, title, topic]
+    fields:
+      - label: 제목
+        name: title
+        widget: string
+
+      - label: 날짜
+        name: date
+        widget: datetime
+        format: YYYY-MM-DD
+        date_format: YYYY-MM-DD
+        time_format: false
+        hint: 오늘보다 미래 날짜로 쓰면 그날이 될 때까지 사이트에 보이지 않습니다.
+
+      - label: 분류
+        name: topic
+        widget: select
+        default: daily
+        options:
+          - { label: 업무 칼럼, value: patent }
+          - { label: 출장, value: trip }
+          - { label: 여행, value: travel }
+          - { label: 음식, value: food }
+          - { label: 골프, value: golf }
+          - { label: 일상, value: daily }
+
+      - label: 요약
+        name: summary
+        widget: text
+        required: false
+        hint: 글 목록 카드에 보이는 한두 줄 소개입니다.
+
+      - label: 장소
+        name: place
+        widget: string
+        required: false
+
+      - label: 대표 사진
+        name: cover
+        widget: image
+        required: false
+        hint: 글 목록 카드 위쪽에 보입니다. 비워 두면 분류별 색 배경이 나옵니다.
+
+      - label: 본문
+        name: body
+        widget: markdown
+
+      - label: 영어·일본어 번역 (선택)
+        name: trans
+        widget: object
+        required: false
+        collapsed: true
+        hint: 비워 두면 영어·일본어 화면에서도 한국어 글이 보입니다.
+        fields:
+          - { label: 영어 제목, name: title_en, widget: string, required: false }
+          - { label: 영어 요약, name: summary_en, widget: text, required: false }
+          - { label: 영어 본문, name: body_en, widget: markdown, required: false }
+          - { label: 일본어 제목, name: title_ja, widget: string, required: false }
+          - { label: 일본어 요약, name: summary_ja, widget: text, required: false }
+          - { label: 일본어 본문, name: body_ja, widget: markdown, required: false }

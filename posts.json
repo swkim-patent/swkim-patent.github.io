@@ -1,0 +1,20 @@
+---
+layout: null
+permalink: /posts.json
+---
+[{% for p in site.posts %}
+  {
+    "id": {{ p.date | date: "%Y%m%d" | append: "-" | append: p.slug | jsonify }},
+    "date": {{ p.date | date: "%Y-%m-%d" | jsonify }},
+    "category": {{ p.topic | default: "daily" | jsonify }},
+    "title": { "ko": {{ p.title | jsonify }}, "en": {{ p.trans.title_en | jsonify }}, "ja": {{ p.trans.title_ja | jsonify }} },
+    "summary": { "ko": {{ p.summary | jsonify }}, "en": {{ p.trans.summary_en | jsonify }}, "ja": {{ p.trans.summary_ja | jsonify }} },
+    "place": {{ p.place | jsonify }},
+    "cover": {{ p.cover | jsonify }},
+    "body": {
+      "ko": {{ p.content | jsonify }},
+      "en": {% if p.trans.body_en %}{{ p.trans.body_en | markdownify | jsonify }}{% else %}null{% endif %},
+      "ja": {% if p.trans.body_ja %}{{ p.trans.body_ja | markdownify | jsonify }}{% else %}null{% endif %}
+    }
+  }{% unless forloop.last %},{% endunless %}{% endfor %}
+]

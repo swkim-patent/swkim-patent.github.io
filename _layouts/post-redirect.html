@@ -1,0 +1,14 @@
+{%- assign pid = page.date | date: "%Y%m%d" | append: "-" | append: page.slug -%}
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<title>{{ page.title }} | sewonlog</title>
+<meta name="description" content="{{ page.summary | default: page.title | escape }}">
+<meta http-equiv="refresh" content="0; url=/#/post/{{ pid }}">
+<link rel="canonical" href="{{ site.url }}/#/post/{{ pid }}">
+</head>
+<body>
+<p><a href="/#/post/{{ pid }}">{{ page.title }}</a></p>
+</body>
+</html>

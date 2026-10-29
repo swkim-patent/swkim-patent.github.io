@@ -181,7 +181,6 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </footer>
 
-<script src="posts.js"></script>
 <script>
 /* ===== 화면 문구 (3개 언어) ===== */
 const T = {
@@ -270,7 +269,7 @@ const CONTACT = { email: "your@email.com" };
 let lang = "ko";
 const t = k => (T[lang] && T[lang][k]) ?? T.ko[k] ?? k;
 const pick = v => (v && typeof v === "object") ? (v[lang] || v.ko || "") : (v || "");
-const posts = (window.POSTS || []).slice().sort((a,b) => b.date.localeCompare(a.date));
+let posts = [], loaded = false;   // 글은 관리자 페이지(/admin)에서 작성 → posts.json으로 자동 생성
 const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
 
 function card(p){
@@ -281,7 +280,7 @@ function card(p){
     <h3>${esc(pick(p.title))}</h3><p>${esc(pick(p.summary))}</p>
     <div class="date">${esc(p.date.replace(/-/g,"."))}</div></div></a>`;
 }
-const list = arr => arr.length ? arr.map(card).join("") : `<div class="empty">${t("empty")}</div>`;
+const list = arr => arr.length ? arr.map(card).join("") : `<div class="empty">${loaded ? t("empty") : "…"}</div>`;
 const tags = k => t(k).split(",").map(s => `<span>${esc(s)}</span>`).join("");
 
 const contactBlock = () => `
@@ -343,7 +342,7 @@ log(cat){
 },
 post(id){
   const p = posts.find(x => x.id === id);
-  if(!p) return views.log();
+  if(!p) return loaded ? views.log() : `<div class="article"><div class="wrap narrow"><div class="empty">…</div></div></div>`;
   const backTo = p.category === "patent" ? "#/patent" : "#/log";
   return `
   <div class="article"><div class="wrap narrow">
@@ -402,6 +401,12 @@ let init = "";
 try { init = localStorage.getItem("lang") || ""; } catch(e) {}
 if(!init){ const n = (navigator.language||"ko").slice(0,2); init = ["ko","en","ja"].includes(n) ? n : "en"; }
 setLang(init);
+
+fetch("/posts.json", {cache: "no-cache"})
+  .then(r => r.json())
+  .then(d => { posts = (d || []).filter(p => p && p.id).sort((a,b) => b.date.localeCompare(a.date)); })
+  .catch(() => {})
+  .finally(() => { loaded = true; render(); });
 </script>
 </body>
 </html>

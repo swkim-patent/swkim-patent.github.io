@@ -1,0 +1,20 @@
+# sewonlog 사이트 설정 (GitHub Pages가 자동으로 읽습니다)
+title: sewonlog
+url: https://sewonlog.com
+timezone: Asia/Seoul
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# 각 글의 개별 주소(sewonlog.com/p/…)는 메인 화면의 해당 글로 연결
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post-redirect
+      permalink: /p/:year:month:day-:title/
+
+exclude:
+  - README.md
