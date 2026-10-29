@@ -3,110 +3,152 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>변리사 김세원 | Patent Attorney Sewon Kim</title>
-<meta name="description" content="변리사 김세원 — 전기·전자·통신, 소프트웨어·AI 분야 특허 출원, 심판, 상표·디자인">
+<title>sewonlog | 변리사 김세원</title>
+<meta name="description" content="변리사 김세원(Sewon Kim)의 업무와 일상 기록 — 특허, 출장, 여행, 음식, 골프">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400;500;700&family=Noto+Serif+KR:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&family=Noto+Serif+JP:wght@500;700&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#14213d; --navy-2:#1f3160; --ink:#1c2230; --muted:#5b6474;
-  --line:#e3e6ec; --bg:#ffffff; --bg-soft:#f6f7f9; --accent:#b08d57;
+  --navy:#14213d; --ink:#1c2230; --muted:#5b6474; --line:#e3e6ec;
+  --bg:#fff; --soft:#f6f7f9; --accent:#b08d57;
   --sans:"Noto Sans KR","Noto Sans JP",system-ui,sans-serif;
   --serif:"Noto Serif KR","Noto Serif JP",Georgia,serif;
 }
 html[lang="ja"]{--sans:"Noto Sans JP","Noto Sans KR",system-ui,sans-serif;--serif:"Noto Serif JP","Noto Serif KR",Georgia,serif}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
 body{font-family:var(--sans);color:var(--ink);background:var(--bg);line-height:1.75;font-size:16px;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
 .wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+.narrow{max-width:720px}
 
 /* header */
-header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
-.logo{font-family:var(--serif);font-weight:700;font-size:19px;color:var(--navy);letter-spacing:.02em;white-space:nowrap}
-.logo small{font-family:var(--sans);font-weight:400;font-size:12px;color:var(--muted);margin-left:8px;letter-spacing:.08em}
+.logo{font-family:var(--serif);font-weight:700;font-size:21px;color:var(--navy);letter-spacing:.01em}
+.logo em{font-style:normal;color:var(--accent)}
 nav ul{display:flex;gap:28px;list-style:none;font-size:14.5px;color:var(--muted)}
-nav a:hover{color:var(--navy)}
-.lang{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden;flex-shrink:0}
+nav a:hover,nav a.on{color:var(--navy)}
+nav a.on{font-weight:500}
+.right{display:flex;align-items:center;gap:12px}
+.lang{display:flex;border:1px solid var(--line);border-radius:6px;overflow:hidden}
 .lang button{border:0;background:none;padding:6px 10px;font:500 12.5px var(--sans);color:var(--muted);cursor:pointer}
 .lang button.on{background:var(--navy);color:#fff}
+.menu-btn{display:none;border:1px solid var(--line);background:none;border-radius:6px;padding:6px 10px;font-size:14px;cursor:pointer;color:var(--navy)}
+
+/* common */
+.eyebrow{font-size:12.5px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:14px}
+h2.title{font-family:var(--serif);font-size:clamp(26px,3.4vw,34px);color:var(--navy);line-height:1.35}
+section{padding:88px 0}
+section.soft{background:var(--soft)}
+.sec-head{margin-bottom:40px;display:flex;justify-content:space-between;align-items:end;gap:16px;flex-wrap:wrap}
+.more{font-size:14px;color:var(--muted);border-bottom:1px solid var(--line);padding-bottom:2px}
+.more:hover{color:var(--navy);border-color:var(--navy)}
 
 /* hero */
-.hero{background:var(--navy);color:#fff;padding:120px 0 110px;position:relative;overflow:hidden}
+.hero{background:var(--navy);color:#fff;padding:110px 0 100px;position:relative;overflow:hidden}
 .hero::after{content:"";position:absolute;right:-120px;top:-120px;width:460px;height:460px;border:1px solid rgba(255,255,255,.08);border-radius:50%}
-.hero::before{content:"";position:absolute;right:-40px;top:-40px;width:300px;height:300px;border:1px solid rgba(176,141,87,.25);border-radius:50%}
-.eyebrow{font-size:13px;letter-spacing:.22em;color:var(--accent);text-transform:uppercase;margin-bottom:20px}
-.hero h1{font-family:var(--serif);font-weight:700;font-size:clamp(32px,5vw,52px);line-height:1.3;margin-bottom:24px;max-width:760px}
-.hero p{font-size:17px;color:rgba(255,255,255,.78);max-width:620px}
-.cta{display:inline-block;margin-top:40px;padding:14px 28px;border:1px solid var(--accent);color:#fff;font-size:15px;letter-spacing:.04em;transition:.2s}
-.cta:hover{background:var(--accent)}
+.hero::before{content:"";position:absolute;right:-40px;top:-40px;width:300px;height:300px;border:1px solid rgba(176,141,87,.28);border-radius:50%}
+.hero h1{font-family:var(--serif);font-size:clamp(32px,5vw,50px);line-height:1.3;margin-bottom:22px;max-width:760px}
+.hero p{font-size:17px;color:rgba(255,255,255,.78);max-width:600px}
 
-/* sections */
-section{padding:100px 0}
-section.soft{background:var(--bg-soft)}
-.sec-head{margin-bottom:48px}
-.sec-head .eyebrow{color:var(--accent)}
-.sec-head h2{font-family:var(--serif);font-size:clamp(26px,3.4vw,34px);color:var(--navy);line-height:1.35}
+/* entry cards */
+.entries{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.entry{border:1px solid var(--line);padding:40px 36px;transition:.2s;display:block;background:#fff}
+.entry:hover{border-color:var(--navy)}
+.entry h3{font-family:var(--serif);font-size:24px;color:var(--navy);margin:6px 0 10px}
+.entry p{color:var(--muted);font-size:15px}
+.entry .go{margin-top:22px;font-size:14px;color:var(--navy);font-weight:500}
 
-/* about */
-.about{display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:start}
-.photo{aspect-ratio:3/4;background:linear-gradient(160deg,#dfe3ea,#c7cdd8);display:flex;align-items:center;justify-content:center;color:var(--muted);font-size:13px;text-align:center;padding:20px}
-.about-text p{margin-bottom:18px;color:#333b4a}
-.facts{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:36px;padding-top:32px;border-top:1px solid var(--line)}
-.facts h4{font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:10px;font-weight:500}
-.facts ul{list-style:none;font-size:14.5px;color:#333b4a}
-.facts li{padding:3px 0}
+/* posts */
+.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.post{background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;transition:.2s}
+.post:hover{border-color:var(--navy)}
+.cover{aspect-ratio:16/10;background:linear-gradient(150deg,#1f3160,#14213d);display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.75);font-family:var(--serif);font-size:15px;letter-spacing:.1em;overflow:hidden}
+.cover img{width:100%;height:100%;object-fit:cover}
+.cover.c-trip{background:linear-gradient(150deg,#3a5a78,#1f3550)}
+.cover.c-travel{background:linear-gradient(150deg,#5d7f6e,#2f4d43)}
+.cover.c-food{background:linear-gradient(150deg,#a0714f,#6b4630)}
+.cover.c-golf{background:linear-gradient(150deg,#6f8d4f,#3f5a2c)}
+.cover.c-daily{background:linear-gradient(150deg,#8a8fa0,#565b6b)}
+.post .body{padding:24px 24px 26px;flex:1;display:flex;flex-direction:column}
+.cat{font-size:12px;letter-spacing:.1em;color:var(--accent);margin-bottom:8px}
+.post h3{font-family:var(--serif);font-size:17.5px;color:var(--navy);line-height:1.5;margin-bottom:8px}
+.post p{font-size:14px;color:var(--muted);flex:1}
+.date{font-size:13px;color:var(--muted);margin-top:12px}
+.empty{padding:56px 24px;text-align:center;color:var(--muted);border:1px dashed var(--line);background:#fff;grid-column:1/-1}
+
+/* chips */
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:32px}
+.chips button{border:1px solid var(--line);background:#fff;padding:7px 16px;font:500 14px var(--sans);color:var(--muted);cursor:pointer;border-radius:999px}
+.chips button.on{background:var(--navy);border-color:var(--navy);color:#fff}
 
 /* practice */
 .grid4{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
-.card{background:#fff;padding:40px 36px}
-.card .num{font-family:var(--serif);color:var(--accent);font-size:14px;margin-bottom:14px}
-.card h3{font-family:var(--serif);font-size:21px;color:var(--navy);margin-bottom:12px}
+.card{background:#fff;padding:38px 34px}
+.card .num{font-family:var(--serif);color:var(--accent);font-size:14px;margin-bottom:12px}
+.card h3{font-family:var(--serif);font-size:20px;color:var(--navy);margin-bottom:10px}
 .card p{font-size:15px;color:var(--muted)}
-
-/* tech */
 .tech{display:grid;grid-template-columns:1fr 1fr;gap:32px}
-.tech-item{border-left:2px solid var(--navy);padding:6px 0 6px 28px}
-.tech-item h3{font-family:var(--serif);font-size:20px;color:var(--navy);margin-bottom:10px}
-.tech-item p{font-size:15px;color:var(--muted);margin-bottom:14px}
+.tech-item{border-left:2px solid var(--navy);padding:6px 0 6px 26px}
+.tech-item h3{font-family:var(--serif);font-size:20px;color:var(--navy);margin-bottom:8px}
+.tech-item p{font-size:15px;color:var(--muted);margin-bottom:12px}
 .tags{display:flex;flex-wrap:wrap;gap:8px}
 .tags span{font-size:12.5px;padding:4px 12px;border:1px solid var(--line);background:#fff;color:#3a4252}
 
-/* insights */
-.posts{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
-.post{background:#fff;border:1px solid var(--line);padding:30px 28px;display:flex;flex-direction:column;transition:.2s}
-.post:hover{border-color:var(--navy)}
-.post .cat{font-size:12px;letter-spacing:.1em;color:var(--accent);margin-bottom:12px}
-.post h3{font-family:var(--serif);font-size:17.5px;color:var(--navy);line-height:1.5;margin-bottom:12px;flex:1}
-.post .date{font-size:13px;color:var(--muted)}
+/* about */
+.about{display:grid;grid-template-columns:240px 1fr;gap:56px;align-items:start}
+.mono{aspect-ratio:1;background:var(--navy);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:var(--serif)}
+.mono b{font-size:56px;letter-spacing:.04em;line-height:1}
+.mono span{font-size:13px;color:var(--accent);letter-spacing:.2em;margin-top:12px}
+.about-text h3{font-family:var(--serif);font-size:28px;color:var(--navy);margin-bottom:4px}
+.about-text .sub{color:var(--muted);font-size:15px;margin-bottom:24px}
+.about-text p{margin-bottom:16px;color:#333b4a}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:28px;margin-top:32px;padding-top:28px;border-top:1px solid var(--line)}
+.facts h4{font-size:13px;letter-spacing:.12em;color:var(--accent);margin-bottom:8px;font-weight:500}
+.facts ul{list-style:none;font-size:15px;color:#333b4a}
+.facts li{padding:3px 0}
 
-/* contact */
+/* article */
+.article{padding:72px 0 96px}
+.back{font-size:14px;color:var(--muted);display:inline-block;margin-bottom:28px}
+.back:hover{color:var(--navy)}
+.article h1{font-family:var(--serif);font-size:clamp(28px,4vw,38px);color:var(--navy);line-height:1.35;margin:6px 0 12px}
+.article .meta{color:var(--muted);font-size:14px;padding-bottom:28px;border-bottom:1px solid var(--line);margin-bottom:36px}
+.content{font-size:17px;line-height:1.95;color:#2a3140}
+.content p{margin-bottom:22px}
+.content h2{font-family:var(--serif);color:var(--navy);font-size:23px;margin:40px 0 14px}
+.content img{margin:28px 0;width:100%}
+.content blockquote{border-left:3px solid var(--accent);padding:4px 0 4px 20px;color:var(--muted);margin:0 0 22px}
+
+/* contact & footer */
 .contact{background:var(--navy);color:#fff}
-.contact .sec-head h2{color:#fff}
-.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
-.contact p.lead{color:rgba(255,255,255,.78);font-size:16px}
+.contact h2.title{color:#fff}
+.contact-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:56px}
+.contact .lead{color:rgba(255,255,255,.78)}
 .info{list-style:none;border-top:1px solid rgba(255,255,255,.15)}
-.info li{display:flex;gap:20px;padding:18px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:15px}
-.info b{width:90px;flex-shrink:0;font-weight:500;color:var(--accent);font-size:13px;letter-spacing:.08em;padding-top:2px}
-
-footer{background:#0e1830;color:rgba(255,255,255,.5);font-size:12.5px;padding:32px 0}
+.info li{display:flex;gap:20px;padding:16px 0;border-bottom:1px solid rgba(255,255,255,.15);font-size:15px}
+.info b{width:80px;flex-shrink:0;font-weight:500;color:var(--accent);font-size:13px;letter-spacing:.08em;padding-top:2px}
+footer{background:#0e1830;color:rgba(255,255,255,.5);font-size:12.5px;padding:30px 0}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 @media (max-width:860px){
-  nav{display:none}
-  .about,.contact-grid,.tech{grid-template-columns:1fr;gap:36px}
-  .photo{max-width:240px}
-  .grid4,.posts{grid-template-columns:1fr}
-  section{padding:72px 0}
-  .hero{padding:88px 0 80px}
+  .menu-btn{display:block}
+  nav{display:none;position:absolute;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid var(--line)}
+  nav.open{display:block}
+  nav ul{flex-direction:column;gap:0;padding:8px 24px 16px}
+  nav li a{display:block;padding:10px 0}
+  .entries,.about,.contact-grid,.tech,.grid4,.posts{grid-template-columns:1fr}
+  .about{gap:32px}.mono{max-width:180px}
+  section{padding:64px 0}
+  .hero{padding:84px 0 76px}
 }
 @media (max-width:480px){
   .wrap{padding:0 16px}
-  .logo small{display:none}
   .facts{grid-template-columns:1fr}
-  .card{padding:32px 24px}
+  .card,.entry{padding:30px 22px}
+  nav ul{padding:8px 16px 16px}
 }
 </style>
 </head>
@@ -114,212 +156,252 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
 <header>
   <div class="wrap bar">
-    <a href="#top" class="logo"><span data-i18n="logo">변리사 김세원</span><small>PATENT ATTORNEY</small></a>
-    <nav><ul>
-      <li><a href="#about" data-i18n="nav.about">소개</a></li>
-      <li><a href="#practice" data-i18n="nav.practice">업무분야</a></li>
-      <li><a href="#tech" data-i18n="nav.tech">기술분야</a></li>
-      <li><a href="#insights" data-i18n="nav.insights">칼럼</a></li>
-      <li><a href="#contact" data-i18n="nav.contact">연락처</a></li>
+    <a href="#/" class="logo">sewon<em>log</em></a>
+    <nav id="nav"><ul>
+      <li><a href="#/" data-route="home" data-t="nav.home"></a></li>
+      <li><a href="#/patent" data-route="patent" data-t="nav.patent"></a></li>
+      <li><a href="#/log" data-route="log" data-t="nav.log"></a></li>
+      <li><a href="#/about" data-route="about" data-t="nav.about"></a></li>
     </ul></nav>
-    <div class="lang" role="group" aria-label="Language">
-      <button data-lang="ko">KO</button><button data-lang="en">EN</button><button data-lang="ja">JA</button>
+    <div class="right">
+      <div class="lang" role="group" aria-label="Language">
+        <button data-lang="ko">KO</button><button data-lang="en">EN</button><button data-lang="ja">JA</button>
+      </div>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
     </div>
   </div>
 </header>
 
-<div class="hero" id="top">
-  <div class="wrap">
-    <div class="eyebrow" data-i18n="hero.eyebrow">Korean Patent Attorney</div>
-    <h1 data-i18n="hero.title">기술을 정확히 이해하고,<br>권리로 단단하게 남깁니다.</h1>
-    <p data-i18n="hero.desc">전기·전자·통신 및 소프트웨어·AI 분야의 발명을 중심으로 출원부터 심판까지 함께합니다.</p>
-    <a href="#contact" class="cta" data-i18n="hero.cta">상담 문의</a>
-  </div>
-</div>
-
-<section id="about">
-  <div class="wrap">
-    <div class="sec-head"><div class="eyebrow">About</div><h2 data-i18n="about.title">소개</h2></div>
-    <div class="about">
-      <div class="photo" data-i18n="about.photo">프로필 사진<br>(3:4 비율 권장)</div>
-      <div class="about-text">
-        <p data-i18n="about.p1">안녕하세요, 변리사 김세원입니다. 전기·전자 공학 배경을 바탕으로 반도체, 통신, 소프트웨어 및 인공지능 분야의 특허 업무를 수행하고 있습니다.</p>
-        <p data-i18n="about.p2">발명자의 아이디어를 기술적으로 정확히 이해하는 것에서 출발해, 심사와 분쟁 단계까지 견딜 수 있는 권리범위를 설계하는 것을 중요하게 생각합니다. 국내외 출원인의 사건을 한국어·영어·일본어로 소통하며 진행합니다.</p>
-        <div class="facts">
-          <div>
-            <h4 data-i18n="about.edu">학력</h4>
-            <ul>
-              <li data-i18n="about.edu1">[대학교] [학과] 학사</li>
-              <li data-i18n="about.edu2">[대학원] [전공] 석사 (해당 시)</li>
-            </ul>
-          </div>
-          <div>
-            <h4 data-i18n="about.career">경력·자격</h4>
-            <ul>
-              <li data-i18n="about.c1">변리사 (제 [ ]회 변리사시험)</li>
-              <li data-i18n="about.c2">[현 소속] / [이전 경력]</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="practice" class="soft">
-  <div class="wrap">
-    <div class="sec-head"><div class="eyebrow">Practice Areas</div><h2 data-i18n="practice.title">업무분야</h2></div>
-    <div class="grid4">
-      <div class="card"><div class="num">01</div><h3 data-i18n="p1.t">국내 특허 출원 · 심사 대응</h3><p data-i18n="p1.d">발명 상담과 선행기술 검토를 거쳐 명세서를 작성하고, 의견제출통지에 대해 의견서·보정서로 대응합니다.</p></div>
-      <div class="card"><div class="num">02</div><h3 data-i18n="p2.t">해외 출원 (In-bound / Out-bound)</h3><p data-i18n="p2.d">해외 출원인의 한국 출원과 심사 대응을 대리하고, 국내 기업의 PCT·해외 출원을 현지 대리인과 협업해 진행합니다.</p></div>
-      <div class="card"><div class="num">03</div><h3 data-i18n="p3.t">심판 · 소송</h3><p data-i18n="p3.d">거절결정불복심판, 무효심판, 권리범위확인심판 등 특허심판원 사건과 관련 분쟁을 수행합니다.</p></div>
-      <div class="card"><div class="num">04</div><h3 data-i18n="p4.t">상표 · 디자인</h3><p data-i18n="p4.d">브랜드와 제품 디자인의 출원·등록, 이의신청 및 분쟁 대응을 지원합니다.</p></div>
-    </div>
-  </div>
-</section>
-
-<section id="tech">
-  <div class="wrap">
-    <div class="sec-head"><div class="eyebrow">Technology</div><h2 data-i18n="tech.title">기술분야</h2></div>
-    <div class="tech">
-      <div class="tech-item">
-        <h3 data-i18n="t1.t">전기 · 전자 · 통신</h3>
-        <p data-i18n="t1.d">반도체 소자와 공정, 회로, 디스플레이, 이동통신 및 네트워크 기술</p>
-        <div class="tags"><span data-i18n="t1.a">반도체</span><span data-i18n="t1.b">디스플레이</span><span data-i18n="t1.c">무선통신</span><span data-i18n="t1.d2">전력전자</span></div>
-      </div>
-      <div class="tech-item">
-        <h3 data-i18n="t2.t">소프트웨어 · AI</h3>
-        <p data-i18n="t2.d">인공지능·머신러닝, 데이터 처리, 영업방법(BM), 컴퓨터 구현 발명</p>
-        <div class="tags"><span data-i18n="t2.a">머신러닝</span><span data-i18n="t2.b">영상처리</span><span data-i18n="t2.c">BM 특허</span><span data-i18n="t2.d2">플랫폼</span></div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="insights" class="soft">
-  <div class="wrap">
-    <div class="sec-head"><div class="eyebrow">Insights</div><h2 data-i18n="ins.title">칼럼 · 판례 노트</h2></div>
-    <div class="posts">
-      <a class="post" href="#"><div class="cat" data-i18n="ins.c1">판례 노트</div><h3 data-i18n="ins.h1">[예시] AI 관련 발명의 진보성 판단, 최근 판례의 흐름</h3><div class="date">2026.10</div></a>
-      <a class="post" href="#"><div class="cat" data-i18n="ins.c2">실무 가이드</div><h3 data-i18n="ins.h2">[예시] 해외 출원인을 위한 한국 심사 절차 안내</h3><div class="date">2026.09</div></a>
-      <a class="post" href="#"><div class="cat" data-i18n="ins.c3">칼럼</div><h3 data-i18n="ins.h3">[예시] 소프트웨어 발명, 청구항을 어떻게 써야 할까</h3><div class="date">2026.08</div></a>
-    </div>
-  </div>
-</section>
-
-<section id="contact" class="contact">
-  <div class="wrap">
-    <div class="sec-head"><div class="eyebrow">Contact</div><h2 data-i18n="contact.title">연락처</h2></div>
-    <div class="contact-grid">
-      <p class="lead" data-i18n="contact.lead">출원 상담, 해외 사건 의뢰, 심판 관련 문의는 이메일로 편하게 연락 주십시오. 한국어, 영어, 일본어로 상담이 가능합니다.</p>
-      <ul class="info">
-        <li><b>EMAIL</b><a href="mailto:your@email.com">your@email.com</a></li>
-        <li><b>TEL</b><span>+82-2-0000-0000</span></li>
-        <li><b>OFFICE</b><span data-i18n="contact.addr">[사무소명] / [주소]</span></li>
-      </ul>
-    </div>
-  </div>
-</section>
+<main id="app"></main>
 
 <footer>
   <div class="wrap">
-    <span>© 2026 Sewon Kim. All rights reserved.</span>
-    <span data-i18n="footer.note">본 홈페이지의 내용은 일반적인 정보 제공을 목적으로 하며 법률 자문이 아닙니다.</span>
+    <span>© 2026 Sewon Kim · sewonlog.com</span>
+    <span data-t="footer.note"></span>
   </div>
 </footer>
 
+<script src="posts.js"></script>
 <script>
-const I18N = {
-  en: {
-    "logo":"Sewon Kim",
-    "nav.about":"About","nav.practice":"Practice","nav.tech":"Technology","nav.insights":"Insights","nav.contact":"Contact",
-    "hero.eyebrow":"Korean Patent Attorney",
-    "hero.title":"Understanding technology precisely,<br>securing it as solid rights.",
-    "hero.desc":"From filing to trial, I work with inventions in electrical, electronics and telecommunications, as well as software and AI.",
-    "hero.cta":"Get in touch",
-    "about.title":"About","about.photo":"Profile photo<br>(3:4 ratio)",
-    "about.p1":"I am Sewon Kim, a Korean patent attorney. With a background in electrical and electronic engineering, I handle patent matters in semiconductors, telecommunications, software and artificial intelligence.",
-    "about.p2":"My work starts with a precise technical understanding of each invention, and focuses on drafting claim scope that holds up through examination and disputes. I work with domestic and overseas clients in Korean, English and Japanese.",
-    "about.edu":"EDUCATION","about.edu1":"B.S., [Department], [University]","about.edu2":"M.S., [Major], [Graduate School] (if applicable)",
-    "about.career":"CAREER & ADMISSION","about.c1":"Registered Patent Attorney, Korea","about.c2":"[Current firm] / [Previous experience]",
-    "practice.title":"Practice Areas",
-    "p1.t":"Korean Patent Prosecution","p1.d":"Invention consultation, prior art review and specification drafting, and responses to Office Actions through arguments and amendments.",
-    "p2.t":"International Filings (In-bound / Out-bound)","p2.d":"Representing overseas applicants before the KIPO, and coordinating PCT and foreign filings for Korean companies with local counsel.",
-    "p3.t":"Trials & Litigation","p3.d":"Appeals against final rejection, invalidation trials, scope confirmation trials and related disputes before the IPTAB.",
-    "p4.t":"Trademarks & Designs","p4.d":"Filing and registration of brands and product designs, oppositions and dispute support.",
-    "tech.title":"Technology",
-    "t1.t":"Electrical, Electronics & Telecom","t1.d":"Semiconductor devices and processes, circuits, displays, mobile communications and networks",
-    "t1.a":"Semiconductors","t1.b":"Displays","t1.c":"Wireless","t1.d2":"Power Electronics",
-    "t2.t":"Software & AI","t2.d":"AI and machine learning, data processing, business methods and computer-implemented inventions",
-    "t2.a":"Machine Learning","t2.b":"Image Processing","t2.c":"Business Methods","t2.d2":"Platforms",
-    "ins.title":"Insights","ins.c1":"Case Note","ins.c2":"Practice Guide","ins.c3":"Column",
-    "ins.h1":"[Sample] Inventive step for AI-related inventions: recent case law",
-    "ins.h2":"[Sample] A guide to Korean patent examination for overseas applicants",
-    "ins.h3":"[Sample] How to draft claims for software inventions",
-    "contact.title":"Contact",
-    "contact.lead":"For filing consultations, overseas matters or trial inquiries, please feel free to contact me by email. Consultations are available in Korean, English and Japanese.",
-    "contact.addr":"[Firm name] / [Address]",
-    "footer.note":"The content of this website is for general information only and does not constitute legal advice."
-  },
-  ja: {
-    "logo":"弁理士 金世元",
-    "nav.about":"プロフィール","nav.practice":"業務分野","nav.tech":"技術分野","nav.insights":"コラム","nav.contact":"お問い合わせ",
-    "hero.eyebrow":"Korean Patent Attorney",
-    "hero.title":"技術を正確に理解し、<br>確かな権利として残します。",
-    "hero.desc":"電気・電子・通信およびソフトウェア・AI分野の発明を中心に、出願から審判までサポートいたします。",
-    "hero.cta":"お問い合わせ",
-    "about.title":"プロフィール","about.photo":"プロフィール写真<br>（3:4推奨）",
-    "about.p1":"韓国弁理士の金世元です。電気・電子工学のバックグラウンドを活かし、半導体、通信、ソフトウェアおよび人工知能分野の特許業務を担当しております。",
-    "about.p2":"発明者のアイデアを技術的に正確に理解することから始め、審査や紛争の段階にも耐えうる権利範囲の設計を大切にしています。国内外の出願人の案件を、韓国語・英語・日本語で対応いたします。",
-    "about.edu":"学歴","about.edu1":"[大学] [学科] 学士","about.edu2":"[大学院] [専攻] 修士（該当する場合）",
-    "about.career":"経歴・資格","about.c1":"韓国弁理士","about.c2":"[現所属] / [前職]",
-    "practice.title":"業務分野",
-    "p1.t":"韓国特許出願・中間処理","p1.d":"発明相談と先行技術調査を経て明細書を作成し、意見提出通知に対して意見書・補正書で対応いたします。",
-    "p2.t":"外国出願（内外・外内）","p2.d":"海外出願人による韓国出願および審査対応を代理し、韓国企業のPCT・外国出願を現地代理人と協力して進めます。",
-    "p3.t":"審判・訴訟","p3.d":"拒絶決定不服審判、無効審判、権利範囲確認審判など、特許審判院の事件および関連紛争を担当いたします。",
-    "p4.t":"商標・意匠","p4.d":"ブランドおよび製品デザインの出願・登録、異議申立および紛争対応をサポートいたします。",
-    "tech.title":"技術分野",
-    "t1.t":"電気・電子・通信","t1.d":"半導体素子・プロセス、回路、ディスプレイ、移動通信およびネットワーク技術",
-    "t1.a":"半導体","t1.b":"ディスプレイ","t1.c":"無線通信","t1.d2":"パワーエレクトロニクス",
-    "t2.t":"ソフトウェア・AI","t2.d":"人工知能・機械学習、データ処理、ビジネスモデル（BM）、コンピュータ実装発明",
-    "t2.a":"機械学習","t2.b":"画像処理","t2.c":"BM特許","t2.d2":"プラットフォーム",
-    "ins.title":"コラム・判例ノート","ins.c1":"判例ノート","ins.c2":"実務ガイド","ins.c3":"コラム",
-    "ins.h1":"［例］AI関連発明の進歩性判断：最近の判例の動向",
-    "ins.h2":"［例］海外出願人のための韓国審査手続ガイド",
-    "ins.h3":"［例］ソフトウェア発明のクレームはどう書くべきか",
-    "contact.title":"お問い合わせ",
-    "contact.lead":"出願のご相談、外国案件のご依頼、審判に関するお問い合わせは、お気軽にメールでご連絡ください。韓国語・英語・日本語で対応いたします。",
-    "contact.addr":"[事務所名] / [住所]",
-    "footer.note":"本ウェブサイトの内容は一般的な情報提供を目的としたものであり、法的助言ではありません。"
-  }
-};
-// Save Korean originals from the HTML
-const ko = {};
-document.querySelectorAll("[data-i18n]").forEach(el => ko[el.dataset.i18n] = el.innerHTML);
-I18N.ko = ko;
+/* ===== 화면 문구 (3개 언어) ===== */
+const T = {
+ko:{
+ "nav.home":"홈","nav.patent":"업무","nav.log":"기록","nav.about":"소개",
+ "hero.eyebrow":"Patent Attorney · Daily Log",
+ "hero.title":"일과 일상을<br>함께 기록합니다.",
+ "hero.desc":"변리사 김세원입니다. 특허 업무 이야기와 출장, 여행, 음식, 골프 같은 일상의 기록을 이곳에 남깁니다.",
+ "entry.patent.t":"업무","entry.patent.d":"업무분야와 기술분야 소개, 특허 실무 칼럼","entry.log.t":"기록","entry.log.d":"출장, 여행, 음식, 골프, 그리고 소소한 일상","go":"보러 가기 →",
+ "recent":"최근 글","all":"전체 보기","empty":"아직 글이 없습니다.",
+ "cat.patent":"업무 칼럼","cat.trip":"출장","cat.travel":"여행","cat.food":"음식","cat.golf":"골프","cat.daily":"일상","cat.all":"전체",
+ "patent.title":"업무","practice":"업무분야","techfield":"기술분야","columns":"업무 칼럼",
+ "p1.t":"국내 특허 출원 · 심사 대응","p1.d":"발명 상담과 선행기술 검토를 거쳐 명세서를 작성하고, 의견제출통지에 대해 의견서·보정서로 대응합니다.",
+ "p2.t":"해외 출원 (In-bound / Out-bound)","p2.d":"해외 출원인의 한국 출원과 심사 대응을 대리하고, 국내 기업의 PCT·해외 출원을 현지 대리인과 협업해 진행합니다.",
+ "p3.t":"심판 · 소송","p3.d":"거절결정불복심판, 무효심판, 권리범위확인심판 등 특허심판원 사건과 관련 분쟁을 수행합니다.",
+ "p4.t":"상표 · 디자인","p4.d":"브랜드와 제품 디자인의 출원·등록, 이의신청 및 분쟁 대응을 지원합니다.",
+ "t1.t":"전기 · 전자 · 통신","t1.d":"반도체 소자와 공정, 회로, 디스플레이, 이동통신 및 네트워크 기술","t1.tags":"반도체,디스플레이,무선통신,전력전자",
+ "t2.t":"소프트웨어 · AI","t2.d":"인공지능·머신러닝, 데이터 처리, 영업방법(BM), 컴퓨터 구현 발명","t2.tags":"머신러닝,영상처리,BM 특허,플랫폼",
+ "log.title":"기록",
+ "about.title":"소개","about.name":"김세원","about.sub":"변리사 · Sewon Kim · 金世元",
+ "about.p1":"서울대학교 전기공학과를 졸업하고 1999년 변리사 시험에 합격했습니다. 전기·전자·통신과 소프트웨어·AI 분야를 중심으로 특허 출원, 심사 대응, 심판 업무를 해 왔습니다.",
+ "about.p2":"국내외 출원인과 한국어·영어·일본어로 소통하며 일하고 있습니다. 이곳에는 업무 이야기와 함께 출장길과 여행, 맛있는 음식, 골프 같은 일상의 기록도 남기려 합니다.",
+ "about.edu":"학력","about.edu1":"서울대학교 전기공학과 졸업",
+ "about.career":"자격","about.c1":"변리사 (1999년 변리사 시험 합격)",
+ "about.lang":"언어","about.lang1":"한국어 · 영어 · 일본어",
+ "about.field":"기술분야","about.field1":"전기·전자·통신, 소프트웨어·AI",
+ "contact.title":"연락처","contact.lead":"업무 문의나 안부 인사 모두 이메일로 편하게 연락 주세요. 한국어, 영어, 일본어로 답장드립니다.",
+ "back":"← 목록으로","footer.note":"이 사이트의 내용은 일반적인 정보 제공을 위한 것이며 법률 자문이 아닙니다."
+},
+en:{
+ "nav.home":"Home","nav.patent":"Work","nav.log":"Log","nav.about":"About",
+ "hero.eyebrow":"Patent Attorney · Daily Log",
+ "hero.title":"A record of<br>work and life.",
+ "hero.desc":"I'm Sewon Kim, a Korean patent attorney. Here I share notes on patent practice, along with business trips, travel, food, golf and everyday life.",
+ "entry.patent.t":"Work","entry.patent.d":"Practice areas, technology fields and patent practice columns","entry.log.t":"Log","entry.log.d":"Business trips, travel, food, golf and everyday moments","go":"Explore →",
+ "recent":"Recent Posts","all":"View all","empty":"No posts yet.",
+ "cat.patent":"Patent Column","cat.trip":"Business Trip","cat.travel":"Travel","cat.food":"Food","cat.golf":"Golf","cat.daily":"Daily","cat.all":"All",
+ "patent.title":"Work","practice":"Practice Areas","techfield":"Technology","columns":"Patent Columns",
+ "p1.t":"Korean Patent Prosecution","p1.d":"Invention consultation, prior art review and specification drafting, and responses to Office Actions through arguments and amendments.",
+ "p2.t":"International Filings (In-bound / Out-bound)","p2.d":"Representing overseas applicants before the KIPO, and coordinating PCT and foreign filings for Korean companies with local counsel.",
+ "p3.t":"Trials & Litigation","p3.d":"Appeals against final rejection, invalidation trials, scope confirmation trials and related disputes before the IPTAB.",
+ "p4.t":"Trademarks & Designs","p4.d":"Filing and registration of brands and product designs, oppositions and dispute support.",
+ "t1.t":"Electrical, Electronics & Telecom","t1.d":"Semiconductor devices and processes, circuits, displays, mobile communications and networks","t1.tags":"Semiconductors,Displays,Wireless,Power Electronics",
+ "t2.t":"Software & AI","t2.d":"AI and machine learning, data processing, business methods and computer-implemented inventions","t2.tags":"Machine Learning,Image Processing,Business Methods,Platforms",
+ "log.title":"Log",
+ "about.title":"About","about.name":"Sewon Kim","about.sub":"Korean Patent Attorney · 김세원 · 金世元",
+ "about.p1":"I graduated from Seoul National University with a degree in Electrical Engineering and passed the Korean patent attorney examination in 1999. My practice centers on electrical, electronics and telecommunications, as well as software and AI, covering prosecution, office action responses and trials.",
+ "about.p2":"I work with clients in Korea and abroad in Korean, English and Japanese. Alongside work notes, this site is where I keep a record of business trips, travel, good food, golf and everyday life.",
+ "about.edu":"EDUCATION","about.edu1":"B.S. in Electrical Engineering, Seoul National University",
+ "about.career":"ADMISSION","about.c1":"Korean Patent Attorney (passed the exam in 1999)",
+ "about.lang":"LANGUAGES","about.lang1":"Korean · English · Japanese",
+ "about.field":"TECHNOLOGY","about.field1":"Electrical, Electronics & Telecom; Software & AI",
+ "contact.title":"Contact","contact.lead":"For inquiries or just to say hello, please feel free to email me. I reply in Korean, English or Japanese.",
+ "back":"← Back to list","footer.note":"The content of this site is for general information only and does not constitute legal advice."
+},
+ja:{
+ "nav.home":"ホーム","nav.patent":"業務","nav.log":"記録","nav.about":"プロフィール",
+ "hero.eyebrow":"Patent Attorney · Daily Log",
+ "hero.title":"仕事と日常を、<br>ともに記録します。",
+ "hero.desc":"韓国弁理士の金世元です。特許業務の話とともに、出張、旅行、食、ゴルフなど日々の記録をここに残します。",
+ "entry.patent.t":"業務","entry.patent.d":"業務分野・技術分野のご紹介と特許実務コラム","entry.log.t":"記録","entry.log.d":"出張、旅行、食、ゴルフ、そして日常のひとこま","go":"見る →",
+ "recent":"最新の記事","all":"すべて見る","empty":"まだ記事がありません。",
+ "cat.patent":"業務コラム","cat.trip":"出張","cat.travel":"旅行","cat.food":"食","cat.golf":"ゴルフ","cat.daily":"日常","cat.all":"すべて",
+ "patent.title":"業務","practice":"業務分野","techfield":"技術分野","columns":"業務コラム",
+ "p1.t":"韓国特許出願・中間処理","p1.d":"発明相談と先行技術調査を経て明細書を作成し、意見提出通知に対して意見書・補正書で対応いたします。",
+ "p2.t":"外国出願（内外・外内）","p2.d":"海外出願人による韓国出願および審査対応を代理し、韓国企業のPCT・外国出願を現地代理人と協力して進めます。",
+ "p3.t":"審判・訴訟","p3.d":"拒絶決定不服審判、無効審判、権利範囲確認審判など、特許審判院の事件および関連紛争を担当いたします。",
+ "p4.t":"商標・意匠","p4.d":"ブランドおよび製品デザインの出願・登録、異議申立および紛争対応をサポートいたします。",
+ "t1.t":"電気・電子・通信","t1.d":"半導体素子・プロセス、回路、ディスプレイ、移動通信およびネットワーク技術","t1.tags":"半導体,ディスプレイ,無線通信,パワーエレクトロニクス",
+ "t2.t":"ソフトウェア・AI","t2.d":"人工知能・機械学習、データ処理、ビジネスモデル（BM）、コンピュータ実装発明","t2.tags":"機械学習,画像処理,BM特許,プラットフォーム",
+ "log.title":"記録",
+ "about.title":"プロフィール","about.name":"金世元","about.sub":"韓国弁理士 · Sewon Kim · 김세원",
+ "about.p1":"ソウル大学校電気工学科を卒業し、1999年に韓国弁理士試験に合格しました。電気・電子・通信およびソフトウェア・AI分野を中心に、特許出願、中間処理、審判業務を手がけてまいりました。",
+ "about.p2":"国内外のお客様と韓国語・英語・日本語でやり取りしながら仕事をしています。ここでは業務の話とともに、出張や旅行、おいしい食事、ゴルフなど日常の記録も残していきます。",
+ "about.edu":"学歴","about.edu1":"ソウル大学校 電気工学科 卒業",
+ "about.career":"資格","about.c1":"韓国弁理士（1999年 弁理士試験合格）",
+ "about.lang":"言語","about.lang1":"韓国語 · 英語 · 日本語",
+ "about.field":"技術分野","about.field1":"電気・電子・通信、ソフトウェア・AI",
+ "contact.title":"お問い合わせ","contact.lead":"ご相談やご挨拶など、お気軽にメールでご連絡ください。韓国語・英語・日本語で返信いたします。",
+ "back":"← 一覧へ戻る","footer.note":"本サイトの内容は一般的な情報提供を目的としたものであり、法的助言ではありません。"
+}};
 
-function setLang(lang){
-  if(!I18N[lang]) lang = "ko";
+/* ===== 연락처 (공개할 정보로 바꾸세요) ===== */
+const CONTACT = { email: "your@email.com" };
+
+let lang = "ko";
+const t = k => (T[lang] && T[lang][k]) ?? T.ko[k] ?? k;
+const pick = v => (v && typeof v === "object") ? (v[lang] || v.ko || "") : (v || "");
+const posts = (window.POSTS || []).slice().sort((a,b) => b.date.localeCompare(a.date));
+const esc = s => String(s).replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function card(p){
+  const cover = p.cover ? `<img src="${esc(p.cover)}" alt="" loading="lazy">` : esc(t("cat."+p.category));
+  return `<a class="post" href="#/post/${esc(p.id)}">
+    <div class="cover c-${esc(p.category)}">${cover}</div>
+    <div class="body"><div class="cat">${esc(t("cat."+p.category))}</div>
+    <h3>${esc(pick(p.title))}</h3><p>${esc(pick(p.summary))}</p>
+    <div class="date">${esc(p.date.replace(/-/g,"."))}</div></div></a>`;
+}
+const list = arr => arr.length ? arr.map(card).join("") : `<div class="empty">${t("empty")}</div>`;
+const tags = k => t(k).split(",").map(s => `<span>${esc(s)}</span>`).join("");
+
+const contactBlock = () => `
+<section class="contact"><div class="wrap">
+  <div class="sec-head"><div><div class="eyebrow">Contact</div><h2 class="title">${t("contact.title")}</h2></div></div>
+  <div class="contact-grid"><p class="lead">${t("contact.lead")}</p>
+  <ul class="info"><li><b>EMAIL</b><a href="mailto:${CONTACT.email}">${CONTACT.email}</a></li>
+  <li><b>WEB</b><span>sewonlog.com</span></li></ul></div>
+</div></section>`;
+
+const views = {
+home(){
+  return `
+  <div class="hero"><div class="wrap">
+    <div class="eyebrow">${t("hero.eyebrow")}</div>
+    <h1>${t("hero.title")}</h1><p>${t("hero.desc")}</p>
+  </div></div>
+  <section><div class="wrap"><div class="entries">
+    <a class="entry" href="#/patent"><div class="eyebrow">Work</div><h3>${t("entry.patent.t")}</h3><p>${t("entry.patent.d")}</p><div class="go">${t("go")}</div></a>
+    <a class="entry" href="#/log"><div class="eyebrow">Log</div><h3>${t("entry.log.t")}</h3><p>${t("entry.log.d")}</p><div class="go">${t("go")}</div></a>
+  </div></div></section>
+  <section class="soft"><div class="wrap">
+    <div class="sec-head"><div><div class="eyebrow">Recent</div><h2 class="title">${t("recent")}</h2></div><a class="more" href="#/log">${t("all")}</a></div>
+    <div class="posts">${list(posts.slice(0,6))}</div>
+  </div></section>`;
+},
+patent(){
+  const cols = posts.filter(p => p.category === "patent");
+  const areas = [1,2,3,4].map(i => `<div class="card"><div class="num">0${i}</div><h3>${t("p"+i+".t")}</h3><p>${t("p"+i+".d")}</p></div>`).join("");
+  return `
+  <section><div class="wrap">
+    <div class="sec-head"><div><div class="eyebrow">Practice Areas</div><h2 class="title">${t("practice")}</h2></div></div>
+    <div class="grid4">${areas}</div>
+  </div></section>
+  <section class="soft"><div class="wrap">
+    <div class="sec-head"><div><div class="eyebrow">Technology</div><h2 class="title">${t("techfield")}</h2></div></div>
+    <div class="tech">
+      <div class="tech-item"><h3>${t("t1.t")}</h3><p>${t("t1.d")}</p><div class="tags">${tags("t1.tags")}</div></div>
+      <div class="tech-item"><h3>${t("t2.t")}</h3><p>${t("t2.d")}</p><div class="tags">${tags("t2.tags")}</div></div>
+    </div>
+  </div></section>
+  <section><div class="wrap">
+    <div class="sec-head"><div><div class="eyebrow">Columns</div><h2 class="title">${t("columns")}</h2></div></div>
+    <div class="posts">${list(cols)}</div>
+  </div></section>
+  ${contactBlock()}`;
+},
+log(cat){
+  const cats = ["all","trip","travel","food","golf","daily","patent"];
+  const cur = cats.includes(cat) ? cat : "all";
+  const arr = cur === "all" ? posts : posts.filter(p => p.category === cur);
+  const chips = cats.map(c => `<button class="${c===cur?"on":""}" onclick="location.hash='#/log${c==="all"?"":"/"+c}'">${t("cat."+c)}</button>`).join("");
+  return `
+  <section><div class="wrap">
+    <div class="sec-head"><div><div class="eyebrow">Log</div><h2 class="title">${t("log.title")}</h2></div></div>
+    <div class="chips">${chips}</div>
+    <div class="posts">${list(arr)}</div>
+  </div></section>`;
+},
+post(id){
+  const p = posts.find(x => x.id === id);
+  if(!p) return views.log();
+  const backTo = p.category === "patent" ? "#/patent" : "#/log";
+  return `
+  <div class="article"><div class="wrap narrow">
+    <a class="back" href="${backTo}">${t("back")}</a>
+    <div class="cat">${esc(t("cat."+p.category))}</div>
+    <h1>${esc(pick(p.title))}</h1>
+    <div class="meta">${esc(p.date.replace(/-/g,"."))}${p.place ? " · " + esc(pick(p.place)) : ""}</div>
+    <div class="content">${pick(p.body)}</div>
+  </div></div>`;
+},
+about(){
+  return `
+  <section><div class="wrap">
+    <div class="sec-head"><div><div class="eyebrow">About</div><h2 class="title">${t("about.title")}</h2></div></div>
+    <div class="about">
+      <div class="mono"><b>SK</b><span>SEWONLOG</span></div>
+      <div class="about-text">
+        <h3>${t("about.name")}</h3><div class="sub">${t("about.sub")}</div>
+        <p>${t("about.p1")}</p><p>${t("about.p2")}</p>
+        <div class="facts">
+          <div><h4>${t("about.edu")}</h4><ul><li>${t("about.edu1")}</li></ul></div>
+          <div><h4>${t("about.career")}</h4><ul><li>${t("about.c1")}</li></ul></div>
+          <div><h4>${t("about.field")}</h4><ul><li>${t("about.field1")}</li></ul></div>
+          <div><h4>${t("about.lang")}</h4><ul><li>${t("about.lang1")}</li></ul></div>
+        </div>
+      </div>
+    </div>
+  </div></section>
+  ${contactBlock()}`;
+}};
+
+function render(){
+  const parts = (location.hash.replace(/^#\/?/, "") || "").split("/");
+  const route = parts[0] || "home";
+  const fn = views[route] || views.home;
+  document.getElementById("app").innerHTML = fn(parts[1] ? decodeURIComponent(parts[1]) : undefined);
+  document.querySelectorAll("[data-t]").forEach(el => el.innerHTML = t(el.dataset.t));
+  document.querySelectorAll("nav a").forEach(a => a.classList.toggle("on", a.dataset.route === (route === "post" ? "log" : route)));
+  document.getElementById("nav").classList.remove("open");
+  const p = route === "post" && posts.find(x => x.id === parts[1]);
+  document.title = p ? `${pick(p.title)} | sewonlog` : "sewonlog | " + (lang==="ko"?"변리사 김세원":lang==="ja"?"弁理士 金世元":"Sewon Kim, Patent Attorney");
+  window.scrollTo(0,0);
+}
+function setLang(l){
+  lang = T[l] ? l : "ko";
   document.documentElement.lang = lang;
-  document.querySelectorAll("[data-i18n]").forEach(el => {
-    const v = I18N[lang][el.dataset.i18n];
-    if(v !== undefined) el.innerHTML = v;
-  });
   document.querySelectorAll(".lang button").forEach(b => b.classList.toggle("on", b.dataset.lang === lang));
-  document.title = lang === "ko" ? "변리사 김세원 | Patent Attorney Sewon Kim"
-                 : lang === "ja" ? "弁理士 金世元 | Patent Attorney Sewon Kim"
-                 : "Sewon Kim | Korean Patent Attorney";
   try { localStorage.setItem("lang", lang); } catch(e) {}
+  render();
 }
-document.querySelectorAll(".lang button").forEach(b => b.addEventListener("click", () => setLang(b.dataset.lang)));
+document.querySelectorAll(".lang button").forEach(b => b.onclick = () => setLang(b.dataset.lang));
+document.getElementById("menuBtn").onclick = () => document.getElementById("nav").classList.toggle("open");
+window.addEventListener("hashchange", render);
 
-let initial = "ko";
-try { initial = localStorage.getItem("lang") || ""; } catch(e) { initial = ""; }
-if(!initial){
-  const nav = (navigator.language || "ko").slice(0,2);
-  initial = ["ko","en","ja"].includes(nav) ? nav : "en";
-}
-setLang(initial);
+let init = "";
+try { init = localStorage.getItem("lang") || ""; } catch(e) {}
+if(!init){ const n = (navigator.language||"ko").slice(0,2); init = ["ko","en","ja"].includes(n) ? n : "en"; }
+setLang(init);
 </script>
 </body>
 </html>
